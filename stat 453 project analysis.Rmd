@@ -1,0 +1,94 @@
+---
+title: "stat 453 project analysis"
+author: "kush manek"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r, eval=FALSE}
+library(dplyr)
+library(ggplot2)
+df <- read.csv("combined_data.csv")
+head(df)
+
+```
+
+```{r, eval=FALSE}
+df$Treatment <- as.factor(df$Treatment)
+df$Person <- as.factor(df$Person)
+df$Score <- as.numeric(df$Score)
+levels(df$Treatment)
+levels(df$Person)
+
+```
+
+```{r, eval=FALSE}
+df %>%
+  group_by(Treatment) %>%
+  summarise(
+    count = n(),
+    mean = mean(Score, na.rm = TRUE),
+    sd = sd(Score, na.rm = TRUE)
+  )
+df %>%
+  group_by(Person) %>%
+  summarise(
+    count = n(),
+    mean = mean(Score, na.rm = TRUE),
+    sd = sd(Score, na.rm = TRUE)
+  )
+```
+
+
+```{r, eval=FALSE}
+res.aov <- aov(Score ~ Treatment + Person + Gender, data = df)
+summary(res.aov)
+```
+
+
+```{r, eval=FALSE}
+residuals <- residuals(res.aov)
+qqnorm(residuals)
+qqline(residuals)
+```
+
+
+```{r, eval=FALSE}
+shapiro.test(residuals)
+```
+
+
+```{r, eval=FALSE}
+fitted_values <- fitted(res.aov)
+plot(fitted_values, residuals, 
+     ylab="Residuals", xlab="Fitted Values", main="Residuals vs Fitted")
+abline(h=0)
+
+```
+
+
+```{r, eval=FALSE}
+plot(1:length(fitted_values), residuals, 
+     ylab="Residuals", xlab="Observation Order", main="Residuals vs Order")
+abline(h=0)
+
+```
+
+
+
+```{r, eval=FALSE}
+TukeyHSD(res.aov, "Treatment", conf.level=0.95)
+```
+
+
