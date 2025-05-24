@@ -7,11 +7,11 @@ The goal of this project was to investigate whether memory recall differs signif
 Understanding the effect of sensory modalities on memory has important implications for designing effective learning tools and educational content.
 
 👥 Team Members
-Kush Manek (V00960352)
+Kush Manek 
 
-Eric Huber (V00980396)
+Eric Huber
 
-Amritpal Singh (V00997628)
+Amritpal Singh
 
 Supervisor: Dr. Michelle Miranda
 
