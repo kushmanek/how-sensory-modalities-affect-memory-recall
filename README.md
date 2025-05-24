@@ -65,8 +65,11 @@ Provides groundwork for future studies on long-term memory or with broader demog
 
 .
 ├── README.md               # This file
+
 ├── finalreport.pdf         # Full project report
+
 ├── combined_data.csv       # Raw data (not included here)
+
 ├── analysis_script.R       # R code for data analysis
 
 🧠 Future Work
