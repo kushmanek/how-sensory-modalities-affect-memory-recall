@@ -63,15 +63,12 @@ Suggests that short-term memory recall may not be strongly influenced by modalit
 
 Provides groundwork for future studies on long-term memory or with broader demographic samples
 
-📁 File Structure
-bash
-Copy
-Edit
 .
 ├── README.md               # This file
 ├── finalreport.pdf         # Full project report
 ├── combined_data.csv       # Raw data (not included here)
 ├── analysis_script.R       # R code for data analysis
+
 🧠 Future Work
 Expand sample size and demographic diversity
 
